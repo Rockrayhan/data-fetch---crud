@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SingleProduct = ({ item }) => {
+const SingleProduct = ({ item, onDelete }) => {
   const { id, name, brand, description, img_url, price } = item;
   console.log(id);
 
@@ -14,7 +14,10 @@ const SingleProduct = ({ item }) => {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        onDelete(id);
+      });
   };
 
   return (
@@ -58,7 +61,10 @@ const SingleProduct = ({ item }) => {
               See Details{" "}
             </button>{" "}
           </Link>
-          <button onClick={handleDelete} className="btn bg-red-500 border-0 "> Delete </button>
+          <button onClick={handleDelete} className="btn bg-red-500 border-0 ">
+            {" "}
+            Delete{" "}
+          </button>
         </div>
       </div>
     </div>
