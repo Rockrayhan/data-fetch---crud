@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingleProduct = ({ item }) => {
   const { id, name, brand, description, img_url, price } = item;
+  console.log(id);
 
   return (
     <div className="card bg-base-100 shadow-xl" style={{ width: '300px', height: '450px' }}>
@@ -20,7 +22,7 @@ const SingleProduct = ({ item }) => {
         </div>
         <p> {description} </p>
         <div className="card-actions justify-end">
-          <button className="btn bg-orange-300">Buy Now</button>
+          <Link to={`/products/${id}`}> <button className="btn bg-orange-300"> See Details </button> </Link>
         </div>
       </div>
     </div>

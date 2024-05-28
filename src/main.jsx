@@ -9,6 +9,9 @@ import {
 import Home from './pages/Home.jsx';
 import AllProducts from './pages/AllProducts.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import SingleProduct from './Components/SingleProduct.jsx';
+import ProductDetails from './pages/ProductDetails.jsx';
+import AddProduct from './pages/AddProduct.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,13 +23,23 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
-        path:"/all-products",
+        path:"/products",
         element: <AllProducts/>,
         loader: ()=> fetch("http://localhost:3000/bags")
       },
       {
+        path:"/products/:id",
+        element: <ProductDetails/>,
+        loader: ({params})=> 
+          fetch(`http://localhost:3000/bags/${params.id}`),
+      },
+      {
         path:"/dashboard",
         element: <Dashboard/>
+      },
+      {
+        path:"/add-product",
+        element: <AddProduct/>
       },
     ]
   },
