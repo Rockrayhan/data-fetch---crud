@@ -51,8 +51,8 @@
     {
       "id": "7",
       "name": "Laptop Bag",
-      "brand": "Samsonite",
-      "price": 100,
+      "brand": "Samophony",
+      "price": "100",
       "description": "A professional laptop bag with padded compartments, perfect for business travel and daily commutes.",
       "img_url": "https://images.pexels.com/photos/842961/pexels-photo-842961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },

@@ -29,6 +29,10 @@ const EditProduct =  () => {
 
     const data = { id, name, brand, description, img_url, price };
 
+    if (!window.confirm("Add the product?")) {
+        return; // Exit if the user cancels
+      }
+
     await fetch(`http://localhost:3000/bags/${product.id}`, {
       method: "PATCH",
       headers: {
@@ -37,10 +41,11 @@ const EditProduct =  () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data),
-      form.reset() , 
-      toast.success('Updated Successfully ...')
-    );
+      .then((data) => { 
+        console.log(data);
+      form.reset() ;
+      toast.success('Updated Successfully ...');
+    });
 
     // console.log(data);
 
