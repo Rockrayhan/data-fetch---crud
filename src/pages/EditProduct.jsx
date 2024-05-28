@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
-const EditProduct = () => {
+
+const EditProduct =  () => {
   const product = useLoaderData();
-  const { id, name, brand, description, img_url, price } = product;
-  const formSubmit = (e) => {
+
+
+  const [name, setName] = useState(product.name);
+  const [price, setPrice] = useState(product.price);
+  const [brand, setBrand] = useState(product.brand);
+  const [id, setId] = useState(product.id);
+  const [description, setDescription] = useState(product.description);
+  const [img_url, setImg_url] = useState(product.img_url);
+
+
+
+  
+  const formSubmit = async(e) => {
     e.preventDefault();
 
     const form = e.target;
@@ -16,6 +28,20 @@ const EditProduct = () => {
     const price = form.price.value;
 
     const data = { id, name, brand, description, img_url, price };
+
+    await fetch(`http://localhost:3000/bags/${product.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data),
+      form.reset() , 
+      toast.success('Updated Successfully ...')
+    );
+
     // console.log(data);
 
     // if (!window.confirm("Add the product?")) {
@@ -44,6 +70,8 @@ const EditProduct = () => {
           placeholder={name}
           name="name"
           className="input border-2  w-2/3 border-orange-500"
+          value={name}
+        onChange={(e) => setName(e.target.value)}
         />
         <br />
         <input
@@ -51,6 +79,8 @@ const EditProduct = () => {
           placeholder={brand}
           name="brand"
           className="input border-2  w-2/3 border-orange-500"
+          value={brand}
+        onChange={(e) => setBrand(e.target.value)}
         />
         <br />
         <input
@@ -58,6 +88,8 @@ const EditProduct = () => {
           placeholder={price}
           name="price"
           className="input border-2  w-2/3 border-orange-500"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
         />
         <br />
         <input
@@ -65,6 +97,8 @@ const EditProduct = () => {
           placeholder={description}
           name="description"
           className="input border-2  w-2/3 border-orange-500"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
         <br />
         <input
@@ -72,6 +106,8 @@ const EditProduct = () => {
           placeholder="Image URL"
           name="img_url"
           className="input border-2  w-2/3 border-orange-500"
+          value={img_url}
+          onChange={(e) => setImg_url(e.target.value)}
         />
         <br />
         <input
@@ -79,6 +115,8 @@ const EditProduct = () => {
           placeholder={id}
           name="id"
           className="input border-2  w-2/3 border-orange-500"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
         />
         <br />
 

@@ -74,19 +74,11 @@
     },
     {
       "id": "11",
-      "name": "asdasd",
+      "name": "table bag",
       "brand": "lucaku",
       "description": "asdasdsda",
       "img_url": "https://images.pexels.com/photos/1502216/pexels-photo-1502216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "asdasd"
-    },
-    {
-      "id": "asdasd",
-      "name": "toasetas",
-      "brand": "asd",
-      "description": "asd",
-      "img_url": "asd",
-      "price": "asd"
     }
   ]
 }
