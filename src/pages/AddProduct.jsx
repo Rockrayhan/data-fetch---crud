@@ -1,4 +1,5 @@
 import React from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddProduct = () => {
   const formSubmit = async (e) => {
@@ -15,6 +16,10 @@ const AddProduct = () => {
     const data = { id, name, brand, description, img_url, price };
     // console.log(data);
 
+    if (!window.confirm("Add the product?")) {
+      return; // Exit if the user cancels
+    }
+
     await fetch("http://localhost:3000/bags", {
       method: "POST",
       headers: {
@@ -26,11 +31,15 @@ const AddProduct = () => {
       .then((data) => {
         console.log(data);
         form.reset() ;
+        toast.success('Successfully added...')
+
       });
   };
 
   return (
     <div>
+      <div><Toaster/></div>
+
       <h1 className="text-orange-500 text-3xl font-bold text-center mb-10">
         Add a Product
       </h1>

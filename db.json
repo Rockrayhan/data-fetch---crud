@@ -73,12 +73,28 @@
       "img_url": "https://images.pexels.com/photos/2994100/pexels-photo-2994100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
-      "id": "10",
-      "name": "Table Bag",
+      "id": "11",
+      "name": "asdasd",
       "brand": "lucaku",
-      "description": "asdasdasd",
+      "description": "asdasdsda",
       "img_url": "https://images.pexels.com/photos/1502216/pexels-photo-1502216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "price": "120"
+      "price": "asdasd"
+    },
+    {
+      "id": "asdasd",
+      "name": "toasetas",
+      "brand": "asd",
+      "description": "asd",
+      "img_url": "asd",
+      "price": "asd"
+    },
+    {
+      "id": "asdasdasdasd",
+      "name": "asdasdasd",
+      "brand": "asdassad",
+      "description": "asdasd",
+      "img_url": "asdasd",
+      "price": "asdasd"
     }
   ]
 }
