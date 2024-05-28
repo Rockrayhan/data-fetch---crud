@@ -23,7 +23,7 @@ const SingleProduct = ({ item, onDelete }) => {
   return (
     <div
       className="card bg-base-100 shadow-xl"
-      style={{ width: "300px", height: "450px" }}
+      style={{ width: "auto", height: "450px" }}
     >
       <figure style={{ height: "200px", overflow: "hidden" }}>
         <img
@@ -53,7 +53,7 @@ const SingleProduct = ({ item, onDelete }) => {
           <h3 className="text-lg text-orange-900"> Price: {price}$ </h3>
         </div>
         <p> {description} </p>
-        <div className="card-actions justify-end">
+        <div className=" flex gap-2 justify-start">
           <Link to={`/products/${id}`}>
             {" "}
             <button className="btn bg-orange-300 border-0">
@@ -65,6 +65,15 @@ const SingleProduct = ({ item, onDelete }) => {
             {" "}
             Delete{" "}
           </button>
+
+          <Link to={`/products/edit/${id}`}>
+            {" "}
+            <button className="btn bg-yellow-300 border-0 ">
+              {" "}
+              Edit
+            </button>{" "}
+          </Link>
+
         </div>
       </div>
     </div>

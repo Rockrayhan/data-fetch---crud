@@ -12,6 +12,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import SingleProduct from './Components/SingleProduct.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import AddProduct from './pages/AddProduct.jsx';
+import EditProduct from './pages/EditProduct.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
       {
         path:"/add-product",
         element: <AddProduct/>
+      },
+      {
+        path:"/products/edit/:id",
+        element: <EditProduct/>,
+        loader: ({params})=> 
+          fetch(`http://localhost:3000/bags/${params.id}`),
       },
     ]
   },
