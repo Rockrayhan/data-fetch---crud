@@ -20,11 +20,11 @@ const router = createBrowserRouter([
     element: <App/>,
     children:[
       {
-        path:"",
+        path:"/home",
         element: <Home/>
       },
       {
-        path:"/products",
+        path:"",
         element: <AllProducts/>,
         loader: ()=> fetch("http://localhost:3000/bags")
       },

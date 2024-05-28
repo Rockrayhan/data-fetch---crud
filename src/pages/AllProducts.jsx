@@ -21,7 +21,7 @@ const AllProducts = () => {
   console.log(products);
   return (
     <div>
-      <h1 className="text-teal-500 text-3xl font-bold text-center mb-5">We Have {products.length} Products</h1>
+      <h1 className="text-orange-500 text-3xl font-bold text-center mb-5">We Have {products.length} Products</h1>
 
       <div className="grid grid-cols-3 gap-4">
        

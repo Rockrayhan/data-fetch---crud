@@ -11,13 +11,13 @@ function App() {
           </button>
         </Link>
 
-        <Link to='/products'>
+        <Link to='/'>
           <button className="w-full py-2 bg-white text-black rounded hover:bg-orange-500 hover:text-white custom-btn">
             All Products
           </button>
         </Link>
 
-        <Link to='/'>
+        <Link to='/home'>
           <button className="w-full py-2 bg-white text-black rounded hover:bg-orange-500 hover:text-white custom-btn">
             Home
           </button>
